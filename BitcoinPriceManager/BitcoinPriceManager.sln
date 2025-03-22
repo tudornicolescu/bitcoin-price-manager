@@ -3,15 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.11.35431.28
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BitcoinPriceManager.API", "BitcoinPriceManager.API\BitcoinPriceManager.API.csproj", "{C4A6E407-B183-498E-A494-23B75283A91D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BitcoinPriceManager.API", "BitcoinPriceManager.API\BitcoinPriceManager.API.csproj", "{C4A6E407-B183-498E-A494-23B75283A91D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BitcoinPriceManager.Application", "BitcoinPriceManager.Application\BitcoinPriceManager.Application.csproj", "{AE3454FA-5619-4A6F-9C95-5452EDB0E924}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BitcoinPriceManager.Application", "BitcoinPriceManager.Application\BitcoinPriceManager.Application.csproj", "{AE3454FA-5619-4A6F-9C95-5452EDB0E924}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BitcoinPriceManager.Domain", "BitcoinPriceManager.Domain\BitcoinPriceManager.Domain.csproj", "{0DB14EC0-EF12-47F8-A8F3-C5102BE6A8F7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BitcoinPriceManager.Domain", "BitcoinPriceManager.Domain\BitcoinPriceManager.Domain.csproj", "{0DB14EC0-EF12-47F8-A8F3-C5102BE6A8F7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BitcoinPriceManager.Infrastructure", "BitcoinPriceManager.Infrastructure\BitcoinPriceManager.Infrastructure.csproj", "{425A4D32-15B1-4C60-A1BB-F89E006B9129}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BitcoinPriceManager.Infrastructure", "BitcoinPriceManager.Infrastructure\BitcoinPriceManager.Infrastructure.csproj", "{425A4D32-15B1-4C60-A1BB-F89E006B9129}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BitcoinPriceManager.Tests", "BitcoinPriceManager.Tests\BitcoinPriceManager.Tests.csproj", "{481D01BF-7390-445B-AEE9-40D492BD70EC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BitcoinPriceManager.Tests", "BitcoinPriceManager.Tests\BitcoinPriceManager.Tests.csproj", "{481D01BF-7390-445B-AEE9-40D492BD70EC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BitcoinPriceManager.SharedKernel", "BitcoinPriceManager.SharedKernel\BitcoinPriceManager.SharedKernel.csproj", "{E0785306-26D4-47FE-ADBB-8DE87A194F63}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{481D01BF-7390-445B-AEE9-40D492BD70EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{481D01BF-7390-445B-AEE9-40D492BD70EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{481D01BF-7390-445B-AEE9-40D492BD70EC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E0785306-26D4-47FE-ADBB-8DE87A194F63}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E0785306-26D4-47FE-ADBB-8DE87A194F63}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E0785306-26D4-47FE-ADBB-8DE87A194F63}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E0785306-26D4-47FE-ADBB-8DE87A194F63}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
