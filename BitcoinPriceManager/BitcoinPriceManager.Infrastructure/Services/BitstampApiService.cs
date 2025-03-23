@@ -1,15 +1,16 @@
-﻿using BitcoinPriceManager.Application.Services;
-using BitcoinPriceManager.SharedKernel.Extensions;
-using System.Text.Json;
-using System.Text.Json.Serialization;
+﻿namespace BitcoinPriceManager.Infrastructure.Services;
 
-namespace BitcoinPriceManager.Infrastructure.Services;
-
-public class BitstampApiService(HttpClient httpClient)
+public class BitstampApiService(HttpClient httpClient, ILogger<BitstampApiService> logger)
     : IExternalApiService
 {
     private const string _baseEndpoint = "https://www.bitstamp.net/api/v2/ohlc/btcusd/";
 
+    /// <summary>
+    /// Method for fetching price from Bitstamp external API
+    /// </summary>
+    /// <param name="timestamp"></param>
+    /// <param name="cancellationToken"></param>
+    /// <returns></returns>
     public async Task<decimal?> FetchBitcoinPriceAsync(DateTime timestamp, CancellationToken cancellationToken = default)
     {
         var requestTimestamp = timestamp.ToUnixTimeSeconds();
@@ -21,11 +22,15 @@ public class BitstampApiService(HttpClient httpClient)
 
         try
         {
+            logger.LogInformation("External API call: {Uri}", endpoint);
+
             using var response = await httpClient.SendAsync(request, cancellationToken);
 
             response.EnsureSuccessStatusCode();
 
-            var jsonString = await response.Content.ReadAsStringAsync();
+            var jsonString = await response.Content.ReadAsStringAsync(cancellationToken);
+
+            logger.LogInformation("Response string: {Response}", jsonString);
 
             var ohlcResponse = JsonSerializer.Deserialize<BitstampResponse>(jsonString);
 
@@ -41,9 +46,11 @@ public class BitstampApiService(HttpClient httpClient)
                 }
             }
         }
-        catch
+        catch (Exception ex)
         {
-            return null;
+            logger.LogError(ex, "An error occured while getting the API response");
+
+            throw;
         }
 
         return null;
@@ -59,6 +66,7 @@ public class BitstampApiService(HttpClient httpClient)
     {
         [JsonPropertyName("pair")]
         public string Pair { get; set; }
+
         [JsonPropertyName("ohlc")]
         public List<OhlcItem> Ohlc { get; set; }
     }

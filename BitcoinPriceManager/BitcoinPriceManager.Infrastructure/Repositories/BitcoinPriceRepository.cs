@@ -1,10 +1,4 @@
-﻿using BitcoinPriceManager.Application.Data;
-using BitcoinPriceManager.Domain.Models;
-using BitcoinPriceManager.Infrastructure.Data;
-using BitcoinPriceManager.SharedKernel.Extensions;
-using Microsoft.EntityFrameworkCore;
-
-namespace BitcoinPriceManager.Infrastructure.Repositories;
+﻿namespace BitcoinPriceManager.Infrastructure.Repositories;
 
 /// <summary>
 /// Repository for BitcoinPrice entity database operations

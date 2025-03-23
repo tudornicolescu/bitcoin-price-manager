@@ -1,6 +1,4 @@
-﻿using BitcoinPriceManager.Domain.Models;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Metadata.Builders;
+﻿using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace BitcoinPriceManager.Infrastructure.Data.Configurations;
 
