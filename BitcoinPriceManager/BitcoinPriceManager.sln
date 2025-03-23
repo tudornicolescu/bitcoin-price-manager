@@ -11,9 +11,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BitcoinPriceManager.Domain"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BitcoinPriceManager.Infrastructure", "BitcoinPriceManager.Infrastructure\BitcoinPriceManager.Infrastructure.csproj", "{425A4D32-15B1-4C60-A1BB-F89E006B9129}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BitcoinPriceManager.Tests", "BitcoinPriceManager.Tests\BitcoinPriceManager.Tests.csproj", "{481D01BF-7390-445B-AEE9-40D492BD70EC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BitcoinPriceManager.SharedKernel", "BitcoinPriceManager.SharedKernel\BitcoinPriceManager.SharedKernel.csproj", "{E0785306-26D4-47FE-ADBB-8DE87A194F63}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BitcoinPriceManager.SharedKernel", "BitcoinPriceManager.SharedKernel\BitcoinPriceManager.SharedKernel.csproj", "{E0785306-26D4-47FE-ADBB-8DE87A194F63}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BitcoinPriceManager.Tests", "BitcoinPriceManager.Tests\BitcoinPriceManager.Tests.csproj", "{40CB4974-A436-46A5-995C-405F2A7B78B7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -37,14 +37,14 @@ Global
 		{425A4D32-15B1-4C60-A1BB-F89E006B9129}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{425A4D32-15B1-4C60-A1BB-F89E006B9129}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{425A4D32-15B1-4C60-A1BB-F89E006B9129}.Release|Any CPU.Build.0 = Release|Any CPU
-		{481D01BF-7390-445B-AEE9-40D492BD70EC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{481D01BF-7390-445B-AEE9-40D492BD70EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{481D01BF-7390-445B-AEE9-40D492BD70EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{481D01BF-7390-445B-AEE9-40D492BD70EC}.Release|Any CPU.Build.0 = Release|Any CPU
 		{E0785306-26D4-47FE-ADBB-8DE87A194F63}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{E0785306-26D4-47FE-ADBB-8DE87A194F63}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E0785306-26D4-47FE-ADBB-8DE87A194F63}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E0785306-26D4-47FE-ADBB-8DE87A194F63}.Release|Any CPU.Build.0 = Release|Any CPU
+		{40CB4974-A436-46A5-995C-405F2A7B78B7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{40CB4974-A436-46A5-995C-405F2A7B78B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{40CB4974-A436-46A5-995C-405F2A7B78B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{40CB4974-A436-46A5-995C-405F2A7B78B7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
