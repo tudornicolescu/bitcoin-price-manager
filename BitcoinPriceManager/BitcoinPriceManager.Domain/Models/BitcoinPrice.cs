@@ -1,4 +1,4 @@
-﻿using BitcoinPriceManager.Domain.Abstractions;
+﻿using BitcoinPriceManager.SharedKernel.Abstractions;
 using BitcoinPriceManager.SharedKernel.Extensions;
 
 namespace BitcoinPriceManager.Domain.Models;
