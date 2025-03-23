@@ -1,4 +1,4 @@
-﻿using BitcoinPriceManager.Domain.Abstractions;
+﻿using BitcoinPriceManager.SharedKernel.Abstractions;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Diagnostics;
 

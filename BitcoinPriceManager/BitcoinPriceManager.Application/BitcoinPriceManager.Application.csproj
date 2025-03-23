@@ -10,4 +10,8 @@
     <ProjectReference Include="..\BitcoinPriceManager.Domain\BitcoinPriceManager.Domain.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="BitcoinPrices\Commands\" />
+  </ItemGroup>
+
 </Project>

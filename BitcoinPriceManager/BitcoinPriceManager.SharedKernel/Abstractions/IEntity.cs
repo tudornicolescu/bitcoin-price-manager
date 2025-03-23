@@ -1,4 +1,4 @@
-﻿namespace BitcoinPriceManager.Domain.Abstractions;
+﻿namespace BitcoinPriceManager.SharedKernel.Abstractions;
 
 public interface IEntity
 {

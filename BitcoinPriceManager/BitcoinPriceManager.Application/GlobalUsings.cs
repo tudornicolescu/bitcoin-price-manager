@@ -1,0 +1,1 @@
+﻿global using BitcoinPriceManager.SharedKernel.CQRS;

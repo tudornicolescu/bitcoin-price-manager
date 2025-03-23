@@ -1,5 +1,9 @@
-﻿using BitcoinPriceManager.Infrastructure.Data;
+﻿using BitcoinPriceManager.Application.Data;
+using BitcoinPriceManager.Application.Services;
+using BitcoinPriceManager.Infrastructure.Data;
 using BitcoinPriceManager.Infrastructure.Data.Interceptors;
+using BitcoinPriceManager.Infrastructure.Repositories;
+using BitcoinPriceManager.Infrastructure.Services;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -21,6 +25,14 @@ public static class DependencyInjection
             options.UseSqlite(connectionString)
                 .AddInterceptors(auditableEntityInterceptor);
         });
+
+        services.AddScoped<IBitcoinPriceRepository, BitcoinPriceRepository>();
+
+        services.AddHttpClient<BitstampApiService>();
+        services.AddHttpClient<BitfinexApiService>();
+
+        services.AddScoped<IExternalApiService, BitstampApiService>();
+        services.AddScoped<IExternalApiService, BitfinexApiService>();
 
         return services;
     }

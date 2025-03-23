@@ -1,4 +1,4 @@
-﻿namespace BitcoinPriceManager.Domain.Abstractions;
+﻿namespace BitcoinPriceManager.SharedKernel.Abstractions;
 
 public abstract class Entity<T> : IEntity<T>
 {
@@ -6,3 +6,4 @@ public abstract class Entity<T> : IEntity<T>
     public DateTime CreatedOn { get; set; }
     public DateTime? ModifiedOn { get; set; }
 }
+
