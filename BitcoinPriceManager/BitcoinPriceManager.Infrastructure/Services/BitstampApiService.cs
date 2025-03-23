@@ -36,6 +36,7 @@ public class BitstampApiService(HttpClient httpClient, ILogger<BitstampApiServic
 
             if (ohlcResponse is not null
                 && ohlcResponse.Data is not null
+                && ohlcResponse.Data.Ohlc is not null
                 && ohlcResponse.Data.Ohlc.Count != 0)
             {
                 var price = ohlcResponse.Data.Ohlc.First().Close;
@@ -45,6 +46,12 @@ public class BitstampApiService(HttpClient httpClient, ILogger<BitstampApiServic
                     return result;
                 }
             }
+        }
+        catch (JsonException jsonEx)
+        {
+            logger.LogError(jsonEx, "Failed to deserialize API response");
+
+            return null;
         }
         catch (Exception ex)
         {
