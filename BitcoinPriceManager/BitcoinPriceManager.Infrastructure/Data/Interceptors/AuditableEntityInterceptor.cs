@@ -1,5 +1,4 @@
 ﻿using BitcoinPriceManager.SharedKernel.Abstractions;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Diagnostics;
 
 namespace BitcoinPriceManager.Infrastructure.Data.Interceptors;

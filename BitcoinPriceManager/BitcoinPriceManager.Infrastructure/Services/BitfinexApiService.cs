@@ -1,16 +1,19 @@
-﻿using BitcoinPriceManager.Application.Services;
-using BitcoinPriceManager.SharedKernel.Extensions;
-using System.Text.Json;
+﻿namespace BitcoinPriceManager.Infrastructure.Services;
 
-namespace BitcoinPriceManager.Infrastructure.Services;
-
-public class BitfinexApiService(HttpClient httpClient)
+public class BitfinexApiService(HttpClient httpClient, ILogger<BitfinexApiService> logger)
     : IExternalApiService
 {
     private const string _baseEndpoint = "https://api.bitfinex.com/v2/candles/trade:1h:tBTCUSD/hist";
 
+    /// <summary>
+    /// Method for fetching prices for given timestamp from Bitfinex external API
+    /// </summary>
+    /// <param name="timestamp"></param>
+    /// <param name="cancellationToken"></param>
+    /// <returns></returns>
     public async Task<decimal?> FetchBitcoinPriceAsync(DateTime timestamp, CancellationToken cancellationToken = default)
     {
+        // create timestamps from datetime to unix time for request
         var startTimestamp = timestamp.ToUnixTimeMilliseconds();
         var endTimestamp = timestamp.AddHours(1).ToUnixTimeMilliseconds();
 
@@ -21,12 +24,17 @@ public class BitfinexApiService(HttpClient httpClient)
 
         try
         {
+            logger.LogInformation("External API call: {Uri}", endpoint);
+
+            // http call + ensure success status code
             using var response = await httpClient.SendAsync(request, cancellationToken);
             response.EnsureSuccessStatusCode();
 
             var jsonString = await response.Content.ReadAsStringAsync(cancellationToken);
 
-            // Parse JSON response
+            logger.LogInformation("Response string: {Response}", jsonString);
+
+            // parse JSON response
             var jsonDocument = JsonDocument.Parse(jsonString);
             var root = jsonDocument.RootElement;
 
@@ -40,9 +48,11 @@ public class BitfinexApiService(HttpClient httpClient)
                 return price;
             }
         }
-        catch
+        catch (Exception ex)
         {
-            return null;
+            logger.LogError(ex, "An error occured while getting the API response");
+
+            throw;
         }
 
         return null;

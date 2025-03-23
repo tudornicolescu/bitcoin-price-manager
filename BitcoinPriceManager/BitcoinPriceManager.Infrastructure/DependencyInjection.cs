@@ -1,12 +1,7 @@
-﻿using BitcoinPriceManager.Application.Data;
-using BitcoinPriceManager.Application.Services;
-using BitcoinPriceManager.Infrastructure.Data;
-using BitcoinPriceManager.Infrastructure.Data.Interceptors;
+﻿using BitcoinPriceManager.Infrastructure.Data.Interceptors;
 using BitcoinPriceManager.Infrastructure.Repositories;
 using BitcoinPriceManager.Infrastructure.Services;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
 
 namespace BitcoinPriceManager.Infrastructure;
 
@@ -33,6 +28,8 @@ public static class DependencyInjection
 
         services.AddScoped<IExternalApiService, BitstampApiService>();
         services.AddScoped<IExternalApiService, BitfinexApiService>();
+
+        services.AddScoped<IFetchBitcoinPriceService, FetchBitcoinPriceService>();
 
         return services;
     }

@@ -1,0 +1,11 @@
+﻿global using BitcoinPriceManager.Application.Data;
+global using BitcoinPriceManager.Application.Helpers;
+global using BitcoinPriceManager.Application.Services;
+global using BitcoinPriceManager.Domain.Models;
+global using BitcoinPriceManager.Infrastructure.Data;
+global using BitcoinPriceManager.SharedKernel.Extensions;
+global using Microsoft.EntityFrameworkCore;
+global using Microsoft.Extensions.DependencyInjection;
+global using Microsoft.Extensions.Logging;
+global using System.Text.Json;
+global using System.Text.Json.Serialization;
